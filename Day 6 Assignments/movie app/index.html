@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+   <!-- Jquery for Validations -->
+    <script>
+        $(document).ready(
+            function () {
+               
+                $("#movieName").blur(
+                    function () { 
+                        var name = $("#movieName");
+                        console.log(name.val());
+                        if (name.val() == "") {
+                            $("#movieName").addClass("invalid");
+                            $("#movieName").removeClass("valid");
+                        }
+                        else {
+                            $("#movieName").addClass("valid");
+                            $("#movieName").removeClass("invalid");
+                        }
+                    })
+                $("#movieDur").blur(
+                    function () {
+                        var name = $("#movieDur");
+                        console.log(name);
+                        if (name.val() == "") {
+                            name.addClass("invalid");
+                            name.removeClass("valid");
+                        }
+                        else {
+                            name.addClass("valid");
+                            name.removeClass("invalid");
+                        }
+                    })
+
+            })
+    </script>
+</head>
+<body>
+    <h1> MOVIE REVIEW </h1>
+    <div>
+        <form>
+            <h2> Add Your Movie here</h2>
+            <label for="movieName">Movie name </label><span id="mandateName">*</span>
+            <input type="text" id="movieName" name="movieName" required />
+            <label for="movieDur">Movie Duration </label><span id="mandateDur">*</span>
+            <input type="number" id="movieDur" name="movieDur" required />
+            <label for="movieRat">Movie Ratings </label>
+            <input type="range" id="movieRat" name="movieRat" min="1" max="5" value="5" />
+            <button id="addBtn" onclick="addData()" type="button"> Add movie !</button>
+            <button type="button" onclick="popLastElement()"> pop </button>
+            <script src="./index.js"></script>
+        </form>
+
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th> Movie S.No </th>
+                <th> Movie Name </th>
+                <th> Movie Duration </th>
+                <th> Movie Ratings </th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total movies </th>
+                <th id="moviesCnt">0</th>
+                <th>Movies Average </th>
+                <th id="averageMovies">0</th>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

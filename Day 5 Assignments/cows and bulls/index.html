@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cows and Bulls</title>
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./script.js"></script>
+</head>
+<body>
+    <header>
+        Guess the Four Letter Secret Word !!
+    </header>
+    <div id="scoreCard">
+        <div class="board" id="cowsDiv">
+            <h1>COWS</h1><hr />
+            <span id="cows">0</span>
+        </div><div class="board"  id="bullsDiv">
+            <h1>BULLS</h1><hr />
+            <span id="bulls">0</span>
+        </div>
+    </div>
+    <textarea id="guessWord"></textarea>
+    <div id="message"></div>
+    <button onclick="checkWord()">check</button>
+    <div id="history">
+
+
+    </div>
+</body>
+</html>
